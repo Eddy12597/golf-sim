@@ -1,0 +1,89 @@
+:root {
+    --main-green: hsl(135, 22%, 35%);
+    --font: "EB Garamond", Times;
+}
+
+* {
+    /* debug */
+    /* outline: orange 1px solid; */
+}
+
+body {
+    margin: 0;
+}
+
+#menu-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-green);
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin: 1vh;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-item-1 {
+    margin-left: 10%;
+    margin-right: 16vw;
+}
+
+#menu-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item-2 {
+    margin: 0 0vw 0 12vw;
+}
+
+#title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0vw;
+
+    background-image: url('./images/lhf-wx-pfp.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    
+    position: relative;
+    overflow: hidden;
+}
+
+#title-title {
+    margin: 2vw;
+    font-size: 7vh;
+    color: white;
+    font-family: var(--font);
+}
+
+#title-text {
+    font-family: var(--font);
+    color: white;
+    font-size: 3vh;
+    margin: 3% 20% 0 20%;
+}
+
+.body-p {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
