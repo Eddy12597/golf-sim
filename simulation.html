@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script defer src="./main.js"></script>
+  <script defer src="./main.js" type="module"></script>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./simulation.css">
   <!--Google fonts-->
@@ -13,6 +13,71 @@
   <title>Golf Simulation</title>
 </head>
 <body>
-  
+  <div id="menu-wrap">
+    <div id="menu">
+      <a id="logo" class="menu-item-1 menu-item" href="./index.html">
+        [Place Logo here]
+      </a>
+      <div id="menu-options" class="menu-item-1 menu-item">
+        <a id="menu-about" class="menu-item-2 menu-item" href="./about.html">
+          About
+        </a>
+        <a id="menu-simulation" class="menu-item-2 menu-item" href="./simulation.html">
+          Simulation
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="title-bg-sim">
+    <div id="title-title">
+      Simulator
+    </div>
+    <div id="title-text">
+      In this simulation, there will be 18 holes (par=4) for Trump and Obama to play. Trump plays riskier: he prioritizes long shots (attempting to clear the lake) over short shots (landing before lake). Obama plays safer: if he is tied or worse, he chooses long shots; if he is leading, he chooses short shots.
+      <p>
+      
+      <p>
+      
+    </div>
+  </div>
+  <div id="sim-body">
+    <div id="sim-main">
+      
+    </div>
+    <div id="sim-config">
+      <div id="sim-config-title">
+        Config
+      </div>
+      <div class="config-container">
+        <div class="config-desc">
+          Probability of Trump choosing Long
+        </div>
+        <input type="range" min="0" max="1" class="slider" id="trump-long-p" step="0.001" value="0.670">
+        <input class="config-val" id="ptcl" value="0.670"></input>
+      </div>
+      <div class="config-container">
+        <div class="config-desc">
+          Success rate of Long shot for Trump
+        </div>
+        <input type="range" min="0" max="1" class="slider" id="trump-long-suc" step="0.001" value="0.550">
+        <input class="config-val" id="tlss" value="0.550"></input>
+      </div>
+      <div class="config-container">
+        Success rate of Short shot for Trump
+        <input type="range" min="0" max="1" class="slider" id="trump-short-suc" step="0.001" value="0.850">
+        <input class="config-val" id="tsss" value="0.850"></input>
+      </div>
+      <div class="config-container">
+        Success rate of Long shot for Obama
+        <input type="range" min="0" max="1" class="slider" id="obama-long-suc" step="0.001" value="0.550">
+        <input class="config-val" id="olss" value="0.550"></input>
+      </div>
+      <div class="config-container">
+        Success rate of Short shot for Obama
+        <input type="range" min="0" max="1" class="slider" id="obama-short-suc" step="0.001" value="0.850">
+        <input class="config-val" id="osss" value="0.850"></input>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

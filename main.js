@@ -1,4 +1,6 @@
 // Golf Simulation: Trump vs Obama
+import { trump_p_l, trump_l_s, trump_s_s, obama_l_s, obama_s_s } from "./input.js";
+
 class GolfSimulation {
     constructor(options = {}) {
         // Strategy probabilities
@@ -6,8 +8,10 @@ class GolfSimulation {
         this.trumpShortProb = 1 - this.trumpLongProb;
         
         // Tee shot success probabilities
-        this.longSuccessProb = options.longSuccessProb || 0.55;
-        this.shortSuccessProb = options.shortSuccessProb || 0.85;
+        this.trumpLongSuccessProb = options.trumpLongSuccessProb || 0.55;
+        this.trumpShortSuccessProb = options.trumpShortSuccessProb || 0.85;
+        this.obamaLongSuccessProb = options.obamaLongSuccessProb || 0.55;
+        this.obamaShortSuccessProb = options.obamaShortSuccessProb || 0.85;
         
         // Stroke distributions for different scenarios
         this.distributions = {
@@ -80,9 +84,11 @@ class GolfSimulation {
         
         // Determine if tee shot succeeds
         if (teeShotType === 'long') {
-            teeShotSuccess = Math.random() < this.longSuccessProb;
+            if (player == 'trump') teeShotSuccess = Math.random() < this.trumpLongSuccessProb;
+            else teeShotSuccess = Math.random() < this.obamaLongSuccessProb;
         } else {
-            teeShotSuccess = Math.random() < this.shortSuccessProb;
+            if (player == 'trump') teeShotSuccess = Math.random() < this.trumpShortSuccessProb;
+            else teeShotSuccess = Math.random() < this.obamaShortSuccessProb;
         }
         
         // Get additional strokes based on outcome
@@ -336,13 +342,15 @@ function runExampleSimulation() {
     console.log('Starting golf simulation...\n');
     
     const sim = new GolfSimulation({
-        trumpLongProb: 2/3,
-        longSuccessProb: 0.55,
-        shortSuccessProb: 0.85
+        trumpLongProb: trump_p_l,
+        trumpLongSuccessProb: trump_l_s,
+        obamaLongSuccessProb: obama_l_s,
+        trumpShortSuccessProb: trump_s_s,
+        obamaShortSuccessProb: obama_s_s
     });
     
     // Run detailed analysis with 10,000 simulations
-    const results = sim.runDetailedAnalysis(10000);
+    const results = sim.runDetailedAnalysis(10_000);
     
     // Print results
     sim.printResults(results);
