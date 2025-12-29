@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Imports-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!--Scripts-->
   <script defer src="./golfsim.js" type="module"></script>
   <script defer src="./main.js" type="module"></script>
   <script defer src="./runsim.js" type="module"></script>
+
+  <!--Stylesheets-->
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./simulation.css">
+
   <!--Google fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
   <title>Golf Simulation</title>
 </head>
 <body>
@@ -31,10 +40,10 @@
     </div>
   </div>
   <div id="title-bg-sim">
-    <div id="title-title">
+    <div id="title-title" class="fade-in-text">
       Simulator
     </div>
-    <div id="title-text">
+    <div id="title-text" class="fade-in-text delayed">
       In this simulation, there will be 18 holes (par=4) for Trump and Obama to play. Trump plays riskier: he prioritizes long shots (attempting to clear the lake) over short shots (landing before lake). Obama plays safer: if he is tied or worse, he chooses long shots; if he is leading, he chooses short shots.
       <p>
       

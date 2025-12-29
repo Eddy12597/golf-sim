@@ -8,6 +8,8 @@
     /* outline: orange 1px solid; */
 }
 
+
+
 body {
     margin: 0;
 }
@@ -86,4 +88,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.fade-in-text {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+.delayed {
+  animation-delay: 0.64s;
+}
+
+.delayed-2 {
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
