@@ -362,3 +362,5 @@ function runExampleSimulation() {
 // Run the simulation when loaded
 // Note: You may want to call this manually to avoid automatic execution
 // runExampleSimulation();
+
+export { GolfSimulation };

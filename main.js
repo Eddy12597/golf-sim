@@ -1,0 +1,1 @@
+console.log(`Current Timestamp: ${Date.now()}`)

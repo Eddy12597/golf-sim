@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer src="./golfsim.js" type="module"></script>
-  <script defer src="./main.js"></script>
-  <script defer src="./runsim.js"></script>
+  <script defer src="./main.js" type="module"></script>
+  <script defer src="./runsim.js" type="module"></script>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./simulation.css">
   <!--Google fonts-->
@@ -44,8 +44,24 @@
   </div>
   <div id="sim-body">
     <div id="sim-main">
-      
+      <div style="padding: 16px;">
+        <h2>Run</h2>
+        <label>Number of simulations:
+          <input id="sim-count" type="number" min="1" max="100000" value="10" />
+        </label>
+        <button id="run-btn">Run Simulation</button>
+
+        <h2>Summary</h2>
+        <div id="summary"></div>
+
+        <h2>Scorecards (first 10 rounds)</h2>
+        <div id="scorecards"></div>
+
+        <h2>Hole-by-hole (Round #1)</h2>
+        <div id="round1-details"></div>
+      </div>
     </div>
+
     <div id="sim-config">
       <div id="sim-config-title">
         Config
@@ -57,6 +73,18 @@
         <input type="range" min="0" max="1" class="slider" id="trump-long-p" step="0.001" value="0.670">
         <input class="config-val" id="ptcl" value="0.670"></input>
       </div>
+      <div class="config-container">
+        Probability of Obama choosing Long when Ahead
+        <input type="range" min="0" max="1" class="slider" id="obama-long-p-ahead" step="0.001" value="0.000">
+        <input class="config-val" id="oplAhead" value="0.000"></input>
+      </div>
+
+      <div class="config-container">
+        Probability of Obama choosing Long when Behind
+        <input type="range" min="0" max="1" class="slider" id="obama-long-p-behind" step="0.001" value="1.000">
+        <input class="config-val" id="oplBehind" value="1.000"></input>
+      </div>
+
       <div class="config-container">
         <div class="config-desc">
           Success rate of Long shot for Trump
